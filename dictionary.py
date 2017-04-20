@@ -3,6 +3,7 @@ import os
 import sys
 
 
+# Main menu of the program
 def menu():
     os.system("clear")
     print("Dictionary for a little programmer\n")
@@ -14,6 +15,7 @@ def menu():
     option = choice()
 
 
+# Foolproof input choice:
 def choice():
     while True:
         option = input("")
@@ -24,27 +26,28 @@ def choice():
             return option
 
 
+# Return to main menu:
 def return_menu():
     menu()
 
 
+# Search the content for a definition:
 def search():
     fgfgf
 
 
+# Adds a definition to the content:
 def add():
     fgfgf
 
 
+# Shows all possible definitions:
 def show_all():
     fgfgf
 
 
+# Ask for a first letter then show possibilities:
 def show_available():
-    fgfgf
-
-
-def exit_prog():
     fgfgf
 
 
@@ -55,9 +58,15 @@ with open('dictionary.csv', newline='\n') as csvfile:
     for line in content:
         dictionary[line[0]] = line[1], line[2]
 
-
-os.system("clear")
-print(*dictionary["multithreading"])
-choice = menu()
-if choice == "0":
-    sys.exit()
+while True:
+    choice = menu()
+    if choice == "1":
+        search()
+    elif choice == "2":
+        add()
+    elif choice == "3":
+        show_all()
+    elif choice == "4":
+        show_available()
+    else:
+        break
