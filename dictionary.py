@@ -1,6 +1,7 @@
 import csv
 import os
 import sys
+import os.path
 
 
 # Main menu of the program
@@ -109,6 +110,11 @@ def load_dict():
             dictionary[line[0]] = line[1], line[2]
     return dictionary
 
+
+# Check if the CSV file exists:
+if not os.path.isfile("dictionary.csv"):
+    print("\nThere is no dictionary.csv file in program directory. Please download it from the repository.\n")
+    sys.exit()
 
 # Main program:
 updated_dict = load_dict()
